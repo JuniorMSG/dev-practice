@@ -20,8 +20,10 @@ docs/
 ## 📚 카테고리별 문서 목록
 
 ### 🔢 알고리즘 (algorithms/)
+- [x] BFS (너비 우선 탐색)
+- [ ] DFS (깊이 우선 탐색)
+- [ ] 이진 탐색
 - [ ] 정렬 알고리즘
-- [ ] 탐색 알고리즘 (이진 탐색, DFS, BFS)
 - [ ] 동적 프로그래밍
 - [ ] 그리디 알고리즘
 - [ ] 투 포인터
@@ -114,6 +116,7 @@ cp docs/templates/concept-template.md docs/language-basics/새개념.md
 
 ## 📝 최근 업데이트
 
+- 2026-01-18: BFS 알고리즘 문서 작성 (algorithms)
 - 2026-01-18: 접근 제어자 문서 작성 (language-basics)
 - 2026-01-18: 문서 구조 및 템플릿 생성
 
