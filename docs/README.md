@@ -63,6 +63,7 @@ docs/
 - [ ] 행위 패턴 (옵저버, 전략, 템플릿 메서드)
 
 ### 🖥️ 시스템 (system/)
+- [x] Git 기본
 - [ ] 네트워크 기초
 - [ ] HTTP/HTTPS
 - [ ] 데이터베이스 기초
@@ -117,6 +118,7 @@ cp docs/templates/concept-template.md docs/language-basics/새개념.md
 
 ## 📝 최근 업데이트
 
+- 2026-01-19: Git 기본 문서 복구 (system)
 - 2026-01-19: 구간합 알고리즘 문서 작성 (algorithms)
 - 2026-01-18: 배열과 리스트 문서 작성 (data-structures)
 - 2026-01-18: BFS 알고리즘 문서 작성 (algorithms)
