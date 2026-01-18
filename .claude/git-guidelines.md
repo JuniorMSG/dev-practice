@@ -120,6 +120,7 @@ Add prefix sum documentation
 - `fix/` - 버그 수정
 - `refactor/` - 리팩토링
 - `test/` - 테스트 코드
+- `solve/` - 코딩테스트 문제 풀이
 
 ### 예시
 ```
@@ -128,11 +129,14 @@ feature/docs-prefix-sum
 docs/data-structures
 fix/array-index-error
 refactor/optimize-search
+solve/boj-1234
+solve/programmers-42576
 
 ❌ 나쁜 예:
 add-docs
 my-branch
 temp
+problem-1234
 ```
 
 ## PR 머지 규칙
@@ -207,6 +211,228 @@ gh pr merge 5 --squash --delete-branch
 - ❌ 무의미한 커밋 메시지 ("수정", "변경" 등)
 - ❌ 여러 개의 무관한 변경사항을 한 커밋에 포함
 - ❌ force push to main/master
+
+## 코딩테스트 워크플로우
+
+### 개요
+
+코딩테스트 문제 풀이를 **이슈로 관리**하고, 풀이를 **PR로 제출**하는 체계적인 워크플로우입니다.
+
+**장점:**
+- ✅ 풀어야 할 문제를 To-Do 리스트처럼 관리
+- ✅ 진행 상황 추적 (Open/In Progress/Closed)
+- ✅ 문제별로 난이도, 알고리즘 태그 라벨 붙이기
+- ✅ PR과 자동 연결로 풀이 완료 시 이슈 자동 닫힘
+- ✅ 나중에 풀이 히스토리 확인 용이
+
+### 워크플로우
+
+#### Step 1: 이슈 생성 (문제 등록)
+
+풀고 싶은 문제를 이슈로 등록합니다.
+
+**이슈 제목 형식:**
+```
+[플랫폼 번호] 문제 이름
+```
+
+**예시:**
+- `[백준 1234] 최단경로`
+- `[프로그래머스 42576] 완주하지 못한 선수`
+- `[LeetCode 1] Two Sum`
+
+**이슈 본문 템플릿:**
+```markdown
+## 📋 문제 정보
+- **플랫폼**: 백준 / 프로그래머스 / LeetCode
+- **번호**: 1234
+- **난이도**: 골드 3 / Level 2 / Medium
+- **링크**: https://www.acmicpc.net/problem/1234
+
+## 🏷️ 분류
+- 알고리즘: DP, 그리디, DFS/BFS 등
+- 자료구조: 배열, 스택, 큐, 트리 등
+
+## 🎯 목표
+- [ ] 문제 이해 및 분석
+- [ ] 알고리즘 설계
+- [ ] 코드 작성
+- [ ] 테스트 케이스 통과
+- [ ] 시간/공간 복잡도 분석
+
+## 💡 힌트 (선택)
+- 핵심 아이디어나 접근 방법 메모
+```
+
+**라벨 추천:**
+- 난이도: `easy`, `medium`, `hard`, `bronze`, `silver`, `gold`, `platinum`
+- 알고리즘: `DP`, `greedy`, `DFS/BFS`, `binary-search`, `two-pointer`
+- 자료구조: `array`, `stack`, `queue`, `tree`, `graph`
+- 상태: `todo`, `in-progress`, `solved`
+
+#### Step 2: 브랜치 생성 및 문제 풀이
+
+이슈를 할당받았으면 브랜치를 생성하고 문제를 풉니다.
+
+**브랜치 명명 규칙:**
+```
+solve/<플랫폼>-<번호>
+```
+
+**예시:**
+```bash
+# 백준 1234번 문제
+git checkout -b solve/boj-1234
+
+# 프로그래머스 42576번 문제
+git checkout -b solve/programmers-42576
+
+# LeetCode 1번 문제
+git checkout -b solve/leetcode-1
+```
+
+**파일 위치:**
+```
+java/src/
+├── boj/
+│   ├── Boj1234.java
+│   └── Boj1234Main.java
+├── programmers/
+│   └── Programmers42576.java
+└── leetcode/
+    └── LeetCode1.java
+```
+
+**커밋 메시지:**
+```
+[플랫폼 번호] 문제 이름 풀이
+
+- 알고리즘: DP
+- 시간복잡도: O(N²)
+- 공간복잡도: O(N)
+
+Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+```
+
+#### Step 3: PR 생성 및 이슈 연결
+
+풀이가 완료되면 PR을 생성하고 이슈를 연결합니다.
+
+**PR 제목 형식:**
+```
+[풀이] 플랫폼 번호 - 문제 이름
+```
+
+**예시:**
+- `[풀이] 백준 1234 - 최단경로`
+- `[풀이] 프로그래머스 42576 - 완주하지 못한 선수`
+
+**PR 본문 템플릿:**
+```markdown
+Closes #이슈번호
+
+## 📊 풀이 요약
+- **알고리즘**: DP / 그리디 / DFS/BFS
+- **시간복잡도**: O(N²)
+- **공간복잡도**: O(N)
+- **소요 시간**: 30분
+
+## 💡 핵심 아이디어
+문제를 어떻게 접근했고, 어떤 알고리즘/자료구조를 사용했는지 간략히 설명
+
+예시:
+- 2차원 DP 배열을 사용하여 부분 문제의 최적해를 저장
+- Bottom-up 방식으로 작은 문제부터 해결
+- 점화식: dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + cost[i][j]
+
+## 🧪 테스트 결과
+- [ ] 예제 테스트 케이스 통과
+- [ ] 엣지 케이스 테스트 (빈 배열, 크기 1, 최대 크기 등)
+- [ ] 제출 결과: 통과 / 시간초과 / 메모리초과
+
+## 📝 배운 점
+이 문제를 풀면서 배운 점, 어려웠던 점, 개선할 점 등
+
+예시:
+- DP 배열 초기화 시 INF 값 설정 방법
+- 메모이제이션을 통한 중복 계산 방지
+- 시간복잡도 개선을 위한 최적화 기법
+
+## 🔗 참고 자료 (선택)
+- 관련 알고리즘 문서 링크
+- 참고한 풀이나 블로그 (있는 경우)
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+```
+
+**이슈 자동 닫기 키워드:**
+- `Closes #123` - PR 머지 시 이슈 자동 닫힘
+- `Fixes #123` - 동일
+- `Resolves #123` - 동일
+
+#### Step 4: 머지 및 완료
+
+```bash
+# PR 스쿼시 머지 (자동으로 이슈 닫힘)
+gh pr merge <PR번호> --squash --delete-branch
+```
+
+### 전체 플로우 예시
+
+```bash
+# 1. 이슈 생성 (GitHub 웹에서)
+# Issue #10: [백준 1234] 최단경로
+# 라벨: gold3, DP, graph
+
+# 2. 브랜치 생성
+git checkout -b solve/boj-1234
+
+# 3. 문제 풀이
+# java/src/boj/Boj1234.java 작성
+
+# 4. 커밋
+git add java/src/boj/Boj1234.java
+git commit -m "[백준 1234] 최단경로 풀이
+
+- 알고리즘: 다익스트라 (우선순위 큐)
+- 시간복잡도: O(E log V)
+- 공간복잡도: O(V)
+
+Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+
+# 5. 푸시 및 PR 생성
+git push -u origin solve/boj-1234
+gh pr create --title "[풀이] 백준 1234 - 최단경로" --body "..."
+
+# 6. PR 머지 (이슈 #10 자동 닫힘)
+gh pr merge <PR번호> --squash --delete-branch
+```
+
+### 유용한 GitHub CLI 명령어
+
+```bash
+# 이슈 생성
+gh issue create --title "[백준 1234] 최단경로" --body "..." --label "gold3,DP"
+
+# 이슈 목록 보기
+gh issue list --label "todo"
+
+# 이슈 할당
+gh issue develop 10 --checkout
+
+# PR과 이슈 연결 확인
+gh pr view <PR번호>
+```
+
+### 팁
+
+1. **주간 목표 설정**: 매주 월요일에 풀 문제를 이슈로 등록
+2. **난이도별 라벨**: 쉬운 문제부터 차근차근 진행
+3. **알고리즘별 분류**: 부족한 알고리즘 유형 집중 공략
+4. **풀이 복습**: 나중에 PR 히스토리를 보며 복습
+5. **통계 확인**: GitHub Insights에서 진행 상황 추적
+
+---
 
 ## 예시 시나리오
 
