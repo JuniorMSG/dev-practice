@@ -1,5 +1,6 @@
 package src;
 
+import java.io.*;
 import java.util.Scanner;
 
 public class Fun11720 {
@@ -32,5 +33,26 @@ public class Fun11720 {
         System.out.println(sum);
 
         sc.close();
+    }
+
+    public void solve2() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        String str = br.readLine();
+        int n = Integer.parseInt(str);
+
+        String str1 = br.readLine();
+        int sum =0;
+        for (int i = 0; i < n; i++) {
+            char ch = str1.charAt(i);
+            int a  = Character.getNumericValue(ch);
+            sum+=a;
+
+        }
+        bw.write(sum+"");
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
