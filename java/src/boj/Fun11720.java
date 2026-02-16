@@ -1,4 +1,5 @@
-package src;
+package src.boj;
+
 
 import java.io.*;
 import java.util.Scanner;

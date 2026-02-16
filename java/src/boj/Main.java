@@ -1,4 +1,4 @@
-package src;
+package src.boj;
 
 import java.util.*;
 import java.io.*;

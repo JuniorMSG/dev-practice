@@ -1,6 +1,6 @@
 package src.main.kotlin
 
-import src.Fun11720
+import src.boj.Fun11720
 
 fun main() {
     val fun11720 = Fun11720()
