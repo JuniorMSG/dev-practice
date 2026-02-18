@@ -2,8 +2,9 @@ package src.boj;
 
 import java.util.*;
 
-// 백준 2606 - 바이러스
-// 1번 컴퓨터와 연결된 컴퓨터 수 구하기 (DFS)
+// 백준 2606 - 바이러스 (실버 3)
+// 분류: DFS/BFS, 그래프 탐색
+// 그래프에서 1번 노드와 연결된 노드 수 구하기
 public class BOJ2606 {
     static List<List<Integer>> graph;
     static boolean[] visited;
