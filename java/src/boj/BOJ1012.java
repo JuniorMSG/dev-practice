@@ -6,6 +6,11 @@ import java.util.*;
 // 분류: DFS/BFS, 그래프 탐색
 // 2D 그리드에서 연결된 영역(배추 묶음) 개수 구하기
 public class BOJ1012 {
+    // 문제분석 : 시간제한 1초
+    // 입력 T(테스트케이스), M(가로 1~50), N(세로 1~50), K(배추 수), 좌표로 입력
+    // 시간복잡도 : O(T * M * N) = 최대 50 * 50 * 50 = 125,000 여유
+    // 그리드 (좌표 입력) → 테스트케이스별 연결 영역 개수
+
     static int[][] grid;
     static boolean[][] visited;
     static int M, N;

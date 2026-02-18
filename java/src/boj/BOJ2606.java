@@ -6,14 +6,20 @@ import java.util.*;
 // 분류: DFS/BFS, 그래프 탐색
 // 그래프에서 1번 노드와 연결된 노드 수 구하기
 public class BOJ2606 {
+    // 문제분석 : 시간제한 1초
+    // 입력 N (1 ~ 100) 컴퓨터 수, M 간선 수
+    // 시간복잡도 : O(N + E) = 100 + 간선 수, 여유
+    // 그래프 (간선 쌍 입력) → 인접 리스트 + DFS
+
     static List<List<Integer>> graph;
     static boolean[] visited;
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        int N = scan.nextInt(); // 컴퓨터 수
-        int M = scan.nextInt(); // 간선 수
+        // TODO: N(컴퓨터 수), M(간선 수) 입력받기
+        int N = scan.nextInt();
+        int M = scan.nextInt();
         visited = new boolean[N+1];
 
         // 인접 리스트 만들기
