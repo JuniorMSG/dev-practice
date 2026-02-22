@@ -25,7 +25,7 @@ import java.util.*;
 //
 // 예제 출력:
 // 3
-public class BOJ2644 {
+public class DFS_S2_BOJ2644_1_COM {
     // 분석 촌수 -> 서로 연결된 연결리스트 DFS -> 그래프로 구현한다.
     // 입력
     // 1-1. 사람의 수 n.

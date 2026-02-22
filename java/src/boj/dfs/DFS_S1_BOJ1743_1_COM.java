@@ -28,7 +28,7 @@ package src.boj.dfs;
 // 예제 출력: 4
 
 import java.util.*;
-public class BOJ1743 {
+public class DFS_S1_BOJ1743_1_COM {
     // TODO 0. 문제분석
     // 변수 입력 세로 N (100) / 가로 M (100) / K 음식물 N*M
     // K개의 줄에 좌표 (r,c) r=행 / c=열 -> 행 -> y 열 -> x로 치환해서 작업

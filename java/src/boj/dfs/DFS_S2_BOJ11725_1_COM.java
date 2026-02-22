@@ -27,7 +27,7 @@ package src.boj.dfs;
 
 
 import java.util.*;
-public class BOJ11725 {
+public class DFS_S2_BOJ11725_1_COM {
     // 분석
     // 루트 없는 트리 -> DFS - Graph 연결리스트 문제
     // 입력 node = 100,000 / D = 99,999 = 200,000 / 트리상에 연결된 두 정점 -> 그래프 시작, 종료지점 양쪽에 추가 필요.

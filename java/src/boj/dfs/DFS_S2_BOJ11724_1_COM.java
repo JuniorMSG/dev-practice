@@ -5,7 +5,7 @@ import java.util.*;
 // 백준 11724 - 연결 요소의 개수 (실버 2)
 // 분류: DFS/BFS, 그래프 탐색
 // 방향 없는 그래프에서 연결 요소(묶음) 개수 구하기
-public class BOJ11724 {
+public class DFS_S2_BOJ11724_1_COM {
     static List<List<Integer>> graph;
     static boolean[] visited;
 

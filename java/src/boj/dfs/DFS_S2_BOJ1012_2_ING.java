@@ -47,7 +47,7 @@ import java.util.*;
 // 예제 출력:
 // 5
 // 2
-public class BOJ1012_re {
+public class DFS_S2_BOJ1012_2_ING {
 
     public static void main(String[] args) {
 

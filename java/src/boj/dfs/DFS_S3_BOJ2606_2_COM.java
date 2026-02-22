@@ -24,7 +24,7 @@ package src.boj.dfs;
 
 
 import java.util.*;
-public class BOJ2606_re {
+public class DFS_S3_BOJ2606_2_COM {
     // 문제분석 : 시간제한 1초
     // 입력 N (1 ~ 100) 컴퓨터 수, M 간선 수
     // 시간복잡도 : O(N + E) = 100 + 간선 수 (100 * 99 / 2 = 4950), 여유

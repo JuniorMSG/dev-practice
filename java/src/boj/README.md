@@ -5,28 +5,33 @@
 ## 파일 명명 규칙
 
 ```
-Boj{문제번호}.java
+{유형}_{난이도}_{문제번호}_{회차}_{상태}.java
 ```
+
+| 항목 | 설명 | 예시 |
+|---|---|---|
+| 유형 | 알고리즘 분류 | DFS, BFS, DP, GREEDY 등 |
+| 난이도 | solved.ac 기준 | S1~S5, G1~G5, B1~B5 |
+| 문제번호 | BOJ + 번호 | BOJ2606, BOJ1926 |
+| 회차 | 몇 번째 풀이 | 1, 2, 3... |
+| 상태 | 완료/진행중 | COM(완료), ING(진행중) |
 
 **예시:**
-- `Boj1234.java` - 백준 1234번 문제
-- `Boj11720.java` - 백준 11720번 문제
+- `DFS_S3_BOJ2606_1_COM.java` - DFS, 실버3, 2606번, 1회차, 완료
+- `DFS_S1_BOJ1926_2_COM.java` - DFS, 실버1, 1926번, 2회차(재풀이), 완료
+- `BFS_S2_BOJ5567_1_ING.java` - BFS, 실버2, 5567번, 1회차, 진행중
 
-## 클래스 구조
+## 폴더 구조
 
-```java
-package src.boj;
-
-public class Boj1234 {
-    public void solve() {
-        // 풀이 코드
-    }
-
-    public static void main(String[] args) {
-        new Boj1234().solve();
-    }
-}
 ```
+boj/
+├── dfs/          ← 완료된 DFS 문제
+├── bfs/          ← 완료된 BFS 문제 (예정)
+├── *.java        ← 미완료 문제
+```
+
+- 완료(COM) 문제는 알고리즘별 폴더로 이동
+- 미완료(ING) 문제는 boj/에 그대로 둠
 
 ## 참고 링크
 

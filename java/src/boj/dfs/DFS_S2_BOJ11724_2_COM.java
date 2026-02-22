@@ -26,7 +26,7 @@ package src.boj.dfs;
 // 예제 출력: 2
 
 import java.util.*;
-public class BOJ11724_re {
+public class DFS_S2_BOJ11724_2_COM {
     // TODO: 분석
     // 입력 정점 N (1000) / 간선 M (1000*999/2 -> 약 50만)
     // 방향없는 그래프 -> 그래프 - 연결리스트 양쪽

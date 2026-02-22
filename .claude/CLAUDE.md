@@ -75,15 +75,17 @@
 
 # 코테 문제 풀이 규칙
 
-## 파일 주석 형식
-```java
-// 백준 {번호} - {제목} ({난이도})
-// 분류: {알고리즘 분류}
-// {한 줄 설명}
+## 파일 명명 규칙
 ```
-- 난이도: solved.ac 기준 (브론즈/실버/골드 + 숫자)
-- 분류: DFS/BFS, DP, 그리디, 구현 등
-- 한 줄 설명: 문제 핵심만 간결하게. 다른 문제와의 비교나 유사성은 적지 않음
+{유형}_{난이도}_{문제번호}_{회차}_{상태}.java
+```
+- 유형: DFS, BFS, DP, GREEDY 등
+- 난이도: S1~S5, G1~G5, B1~B5 (solved.ac 기준)
+- 문제번호: BOJ + 번호
+- 회차: 1, 2, 3... (재풀이 시 증가)
+- 상태: COM(완료), ING(진행중)
+- 클래스명은 파일명과 동일하게 (`public class DFS_S3_BOJ2606_1_COM`)
+- 예: `DFS_S3_BOJ2606_1_COM.java`, `BFS_S2_BOJ5567_1_ING.java`
 
 ## 스켈레톤 파일 생성 규칙
 - 문제 풀이용 빈 파일을 만들 때, 아래 내용을 주석에 포함할 것:
@@ -113,7 +115,7 @@ package src.boj;
 // 예제 출력: {출력}
 
 import java.util.*;
-public class BOJ{번호} {
+public class {유형}_{난이도}_BOJ{번호}_1_ING {
 
     public static void main(String[] args) {
 
@@ -122,11 +124,11 @@ public class BOJ{번호} {
 ```
 
 ## 완료된 문제 정리 규칙
-- 제출 통과한 문제는 알고리즘별 폴더로 이동
+- 제출 통과한 문제는 알고리즘별 폴더로 이동하고 상태를 COM으로 변경
   - `java/src/boj/dfs/` — DFS 문제
   - `java/src/boj/bfs/` — BFS 문제
   - (알고리즘 추가될 때마다 폴더 추가)
-- 미완료 문제는 `java/src/boj/`에 그대로 둠
+- 미완료(ING) 문제는 `java/src/boj/`에 그대로 둠
 - 이동 시 package 선언도 함께 수정 (`package src.boj.dfs;`)
 
 ## TODO 주석

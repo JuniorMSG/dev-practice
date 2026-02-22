@@ -27,7 +27,7 @@ import java.util.*;
 // 예제 출력:
 // YES
 // NO
-public class BOJ1707 {
+public class DFS_G4_BOJ1707_1_ING {
 
     public static void main(String[] args) {
 

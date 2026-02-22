@@ -22,7 +22,7 @@ import java.util.*;
 57 2
 */
 // 예제 출력: 4
-public class BOJ2331 {
+public class DFS_S4_BOJ2331_1_ING {
 
     public static void main(String[] args) {
 

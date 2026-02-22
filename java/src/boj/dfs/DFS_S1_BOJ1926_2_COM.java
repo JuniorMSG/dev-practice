@@ -31,7 +31,7 @@ package src.boj.dfs;
 
 import java.util.*;
 
-public class BOJ1926_re {
+public class DFS_S1_BOJ1926_2_COM {
     // TODO 0. 문제분석
     // TODO 0-1. 입력
     // 세로 N 500 / 가로 M 500

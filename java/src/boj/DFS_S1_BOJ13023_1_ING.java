@@ -23,7 +23,7 @@ import java.util.*;
 //
 // 예제 출력:
 // 1
-public class BOJ13023 {
+public class DFS_S1_BOJ13023_1_ING {
 
     public static void main(String[] args) {
 
