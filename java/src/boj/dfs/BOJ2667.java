@@ -1,4 +1,4 @@
-package src.boj;
+package src.boj.dfs;
 
 import java.util.*;
 

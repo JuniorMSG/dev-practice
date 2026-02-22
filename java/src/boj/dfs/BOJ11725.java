@@ -1,4 +1,4 @@
-package src.boj;
+package src.boj.dfs;
 
 
 // 백준 11725 - 트리의 부모 찾기 (실버 2)

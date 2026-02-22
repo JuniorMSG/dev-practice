@@ -1,4 +1,4 @@
-package src.boj;
+package src.boj.dfs;
 
 
 // 백준 2606 - 바이러스 (실버 3) [재풀이]
