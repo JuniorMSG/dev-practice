@@ -32,9 +32,66 @@ package src.boj;
 // 0
 
 import java.util.*;
+
 public class DFS_S2_BOJ24479_1_ING {
 
-    public static void main(String[] args) {
+    // TODO: 문제분석 : N개의 정점과 M개의 간선으로 구성된 무방향 그래프 (DFS-> 입력 양방향)
+    // TODO: 문제유형 : DFS, Graph, 입력 양방향 , 정점 번호는 1번부터 시작 - 1-indexed로 구현
+    // TODO: 입력 : N (100,000) / M (200,000) / R ( 1 <= R <= N) M개의 줄에 간선 정보 u, v 주어짐
+    // TODO: 특이사항 시작정점 R로 고정됨
 
+    // TODO: 출력 : 시작정점 기준으로 방문하는데 오름차순 기준으로.. (정렬필요)
+    // TODO: 시간복잡도 100,000 + 200,000 = 여유 O(n+m)
+
+    // TODO: 0. 변수선언
+    static int N, M, R;
+    static int[] order;
+    static List<List<Integer>> graph;
+    static boolean[] visited;
+    static int count = 0;
+
+    public static void main(String[] args) {
+        // TODO 1. 변수 입력 및 초기화
+        Scanner scan = new Scanner(System.in);
+        N = scan.nextInt();
+        M = scan.nextInt();
+        R = scan.nextInt();
+        order = new int[N+1];
+        visited = new boolean[N+1];
+
+        // TODO 2. 그래프 초기화 및 입력
+        graph = new ArrayList<>();
+        for (int i = 0; i <= N; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < M; i++){
+            int start = scan.nextInt();
+            int end = scan.nextInt();
+            graph.get(start).add(end);
+            graph.get(end).add(start);
+        }
+
+        // TODO 3. 오름차순 정렬  및 DFS 호출 및 구현
+        for (int i = 1; i <= N; i++) {
+            Collections.sort(graph.get(i));
+        }
+        dfs(R);
+
+        // TODO 4. 정렬 및 출력
+        for(int i=1; i<=N; i++){
+            System.out.println(order[i]);
+        }
+
+    }
+
+    public static void dfs(int node) {
+        visited[node] = true;
+        order[node] = ++count;
+        for(int next: graph.get(node)){
+            if(!visited[next]){
+                dfs(next);
+            }
+        }
     }
 }

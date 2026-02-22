@@ -29,7 +29,6 @@ package src.boj;
 
 import java.util.*;
 public class DFS_S1_BOJ2583_1_ING {
-
     public static void main(String[] args) {
 
     }
