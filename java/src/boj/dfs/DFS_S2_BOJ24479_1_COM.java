@@ -1,4 +1,4 @@
-package src.boj;
+package src.boj.dfs;
 
 // 백준 24479 - 알고리즘 수업 - 깊이 우선 탐색 1 (실버 2)
 // 시간제한: 1초 | 메모리제한: 512MB
@@ -32,8 +32,7 @@ package src.boj;
 // 0
 
 import java.util.*;
-
-public class DFS_S2_BOJ24479_1_ING {
+public class DFS_S2_BOJ24479_1_COM {
 
     // TODO: 문제분석 : N개의 정점과 M개의 간선으로 구성된 무방향 그래프 (DFS-> 입력 양방향)
     // TODO: 문제유형 : DFS, Graph, 입력 양방향 , 정점 번호는 1번부터 시작 - 1-indexed로 구현
